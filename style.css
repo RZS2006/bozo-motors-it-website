@@ -6,6 +6,7 @@
 	--clr-text-gray: #2c2c2c;
 	--clr-gray: #f0f0f0;
 	--clr-hover-gray: #e6e6e6;
+	--clr-background-gray: #f3f3f3;
 	--clr-hover-white: #cfcfcf;
 }
 
@@ -240,13 +241,73 @@ header .section-container {
 }
 
 .models-subsection {
-	margin-top: 1em;
-	height: 100vh;
+	margin-top: 1.5em;
+	min-height: 100vh;
 	scroll-margin-top: 5em;
 }
 
 .models-subsection h2 {
 	font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.models-grid {
+	margin-top: 2em;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 2em;
+}
+
+.models-card {
+	align-self: start;
+	border-radius: 5px;
+	transition: background-color 200ms;
+}
+
+.models-card:hover {
+	background-color: var(--clr-background-gray);
+}
+
+.models-card img {
+	max-height: 180px;
+	aspect-ratio: 5 / 3;
+	object-fit: cover;
+}
+
+.models-card .card-content {
+	position: relative;
+	padding: 1.5em 1em;
+	overflow: hidden;
+}
+
+.car-name {
+	font-size: clamp(1rem, 3vw, 1.4rem);
+}
+
+.car-price {
+	margin-top: 0.5em;
+	font-size: 0.8rem;
+	color: var(--clr-text-gray);
+}
+
+.car-link {
+	display: inline-flex;
+	align-items: center;
+	margin-top: 1.5em;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	color: var(--clr-primary);
+}
+
+.car-link img {
+	display: inline-block;
+	width: 1em;
+}
+
+.car-link:hover {
+	text-decoration: underline;
+	letter-spacing: 0.3em;
+	color: var(--clr-hover-primary);
 }
 
 /* Contact Page */
@@ -298,19 +359,19 @@ textarea.contact-input {
 
 .contact-submit-button {
 	align-self: flex-start;
+	border: none;
 	padding: 1em;
 	font-size: 0.8rem;
-	border: none;
-	text-transform: uppercase;
 	letter-spacing: 0.2em;
+	text-transform: uppercase;
 }
 
 .contact-submit-button {
 	align-self: flex-start;
 	padding: 1em 1.5em;
 	font-size: 0.8rem;
-	text-transform: uppercase;
 	letter-spacing: 0.2em;
+	text-transform: uppercase;
 	transition: padding 200ms;
 }
 
@@ -376,6 +437,29 @@ footer .section-container {
 
 	.about-section .content.left {
 		flex-direction: row-reverse;
+	}
+
+	.models-card img {
+		max-height: 300px;
+		transition: 200ms;
+	}
+
+	.models-card:hover img {
+		aspect-ratio: 4 / 3;
+		scale: 1.05;
+	}
+
+	.models-card .car-link {
+		position: absolute;
+		transform: translateX(-150px);
+		opacity: 0;
+		transition: 200ms;
+	}
+
+	.models-card:hover .car-link {
+		position: relative;
+		transform: translateX(0px);
+		opacity: 1;
 	}
 
 	.contact-section .content {
