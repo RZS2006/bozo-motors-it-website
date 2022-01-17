@@ -149,6 +149,13 @@
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
+
+    document.addEventListener("keyup", (e) => {
+        if (e.keyCode == 9) {
+            console.log(document.activeElement)
+            document.activeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    })
 </script>
 
 </html>
