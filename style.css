@@ -8,6 +8,8 @@
 	--clr-hover-gray: #e6e6e6;
 	--clr-background-gray: #f6f6f6;
 	--clr-hover-white: #cfcfcf;
+
+	--transition-speed: 200ms;
 }
 
 /* Base Styles */
@@ -125,7 +127,8 @@ header .section-container {
 /* Hero */
 
 .hero-section {
-	background: center/cover url(./img/pexels-scosche-1149056.jpg);
+	background: center/cover url(./img/pexels-scosche-1149056.webp);
+	background-color: #df9331;
 	height: calc(100vh - 64px);
 }
 
@@ -297,6 +300,7 @@ header .section-container {
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
 	color: var(--clr-primary);
+	transition: letter-spacing 200ms;
 }
 
 .car-link img {
@@ -449,6 +453,11 @@ footer .section-container {
 		scale: 1.05;
 	}
 
+	.models-card:focus-within img {
+		aspect-ratio: 4 / 3;
+		scale: 1.05;
+	}
+
 	.models-card .car-link {
 		position: absolute;
 		transform: translateX(-150px);
@@ -456,7 +465,8 @@ footer .section-container {
 		transition: 200ms;
 	}
 
-	.models-card:hover .car-link {
+	.models-card:hover .car-link,
+	.models-card .car-link:focus {
 		position: relative;
 		transform: translateX(0px);
 		opacity: 1;
