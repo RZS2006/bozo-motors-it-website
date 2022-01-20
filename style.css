@@ -121,10 +121,23 @@ header .section-container {
 .header-nav li {
 	margin: 0 0.5rem;
 	font-size: 0.8rem;
+	position: relative;
 }
 
-.header-nav li a:hover {
-	text-decoration: underline;
+.header-nav li a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -4px;
+	width: 0;
+	height: 2px;
+	background-color: white;
+	transition: 200ms;
+}
+
+.header-nav li a:hover::after,
+.header-nav li a:focus::after {
+	width: 100%;
 }
 
 /* Hero */
@@ -185,6 +198,28 @@ header .section-container {
 .button-secondary:hover,
 .button-secondary:focus {
 	background-color: var(--clr-hover-white);
+}
+
+.features-section .section-container {
+	margin: 4em 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: 2em;
+}
+
+.feature-card img {
+	width: 40px;
+}
+
+.feature-card h2 {
+	margin-top: 0.5em;
+	font-size: 1.2rem;
+}
+
+.feature-card p {
+	font-size: 0.8rem;
+	margin-top: 1em;
+	color: var(--clr-text-gray);
 }
 
 /* About Page */
@@ -449,6 +484,15 @@ footer .section-container {
 }
 
 @media screen and (min-width: 720px) {
+	.feature-card img {
+		transition: 200ms;
+	}
+
+	.feature-card:hover img {
+		scale: 1.2;
+		transform: rotate(15deg);
+	}
+
 	.about-section .content.right {
 		flex-direction: row;
 	}
