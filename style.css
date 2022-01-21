@@ -536,3 +536,9 @@ footer .section-container {
 		flex-direction: row;
 	}
 }
+
+@media screen and (max-width: 720px) {
+	.models-card[data-aos-delay] {
+		transition-delay: 0ms !important;
+	}
+}
