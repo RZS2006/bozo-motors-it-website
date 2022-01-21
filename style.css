@@ -61,11 +61,19 @@ img {
 	object-fit: cover;
 }
 
+main {
+	padding-bottom: 2rem;
+}
+
+footer {
+	background-color: var(--clr-background-gray);
+}
+
 button:hover,
 button:focus,
 a:hover,
 a:focus {
-	transition: 200ms;
+	transition: var(--transition-speed);
 }
 
 .container {
@@ -90,7 +98,7 @@ a:focus {
 	background-color: var(--clr-primary);
 	height: 4px;
 	width: 20%;
-	transition: width 200ms;
+	transition: width var(--transition-speed);
 }
 
 /* Header */
@@ -132,7 +140,7 @@ header .section-container {
 	width: 0;
 	height: 2px;
 	background-color: white;
-	transition: 200ms;
+	transition: var(--transition-speed);
 }
 
 .header-nav li a:hover::after,
@@ -140,7 +148,7 @@ header .section-container {
 	width: 100%;
 }
 
-/* Hero */
+/* Home  */
 
 .hero-section {
 	background: center/cover url(./img/pexels-scosche-1149056.webp);
@@ -284,7 +292,7 @@ header .section-container {
 
 .models-link a:hover {
 	background-color: var(--clr-hover-gray);
-	transition: 200ms;
+	transition: var(--transition-speed);
 }
 
 .models-subsection {
@@ -307,7 +315,7 @@ header .section-container {
 .models-card {
 	align-self: start;
 	border-radius: 5px;
-	transition: background-color 200ms;
+	transition: background-color var(--transition-speed);
 }
 
 .models-card:hover {
@@ -348,7 +356,7 @@ header .section-container {
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
 	color: var(--clr-primary);
-	transition: letter-spacing 200ms;
+	transition: letter-spacing var(--transition-speed);
 }
 
 .car-link img {
@@ -425,7 +433,7 @@ textarea.contact-input {
 	font-size: 0.8rem;
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
-	transition: padding 200ms;
+	transition: padding var(--transition-speed);
 }
 
 .contact-submit-button:hover {
@@ -485,7 +493,7 @@ footer .section-container {
 
 @media screen and (min-width: 720px) {
 	.feature-card img {
-		transition: 200ms;
+		transition: var(--transition-speed);
 	}
 
 	.feature-card:hover img {
@@ -503,7 +511,7 @@ footer .section-container {
 
 	.models-card img {
 		max-height: 300px;
-		transition: 200ms;
+		transition: var(--transition-speed);
 	}
 
 	.models-card:hover img {
@@ -522,7 +530,7 @@ footer .section-container {
 		bottom: 0;
 		transform: translateX(-150px);
 		opacity: 0;
-		transition: 200ms;
+		transition: var(--transition-speed);
 	}
 
 	.models-card:hover .car-link,
