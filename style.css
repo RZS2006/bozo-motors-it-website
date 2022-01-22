@@ -103,6 +103,24 @@ a:focus {
 
 /* Header */
 
+.skip-to-main-content {
+	position: absolute;
+	left: 1rem;
+	top: 0;
+	transform: translateY(-100%);
+	transition: transform var(--transition-speed);
+	padding: 1em;
+	background-color: hsla(0, 0%, 100%);
+	font-size: 0.8rem;
+	color: var(--clr-primary);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.skip-to-main-content:focus {
+	transform: translateX(0%);
+}
+
 header {
 	height: 64px;
 	background-color: var(--clr-primary);
