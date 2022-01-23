@@ -1,15 +1,17 @@
 /* Variables */
 
 :root {
-	--clr-primary: #050316;
-	--clr-hover-primary: #0f0935;
-	--clr-text-gray: #2c2c2c;
-	--clr-gray: #f0f0f0;
-	--clr-hover-gray: #e6e6e6;
-	--clr-background-gray: #f6f6f6;
-	--clr-hover-white: #dddddd;
+	--clr-primary: hsl(246, 76%, 5%);
+	--clr-hover-primary: hsl(246, 71%, 10%);
+	--clr-text-gray: hsl(0, 0%, 20%);
+	--clr-gray: hsl(0, 0%, 94%);
+	--clr-hover-gray: hsl(0, 0%, 90%);
+	--clr-background-gray: hsl(0, 0%, 96%);
+	--clr-hover-white: hsl(0, 0%, 87%);
 
 	--transition-speed: 200ms;
+
+	--fw-bold: 700;
 }
 
 /* Base Styles */
@@ -52,8 +54,14 @@ a {
 	text-decoration: none;
 }
 
+h1,
+h2,
+h3 {
+	font-weight: var(--fw-bold);
+}
+
 p {
-	line-height: 1.75;
+	line-height: 1.8;
 }
 
 img {
@@ -82,8 +90,8 @@ a:focus {
 }
 
 .section-heading {
-	margin: 0.8em 0;
-	font-size: clamp(1.6rem, 6vw, 3rem);
+	margin: 1em 0;
+	font-size: clamp(1.8rem, 6vw, 3.2rem);
 	color: var(--clr-primary);
 }
 
@@ -105,16 +113,16 @@ a:focus {
 
 .skip-to-main-content {
 	position: absolute;
-	left: 1rem;
 	top: 0;
+	left: 1rem;
 	transform: translateY(-100%);
 	transition: transform var(--transition-speed);
 	padding: 1em;
-	background-color: hsla(0, 0%, 100%);
 	font-size: 0.8rem;
-	color: var(--clr-primary);
 	font-weight: bold;
 	text-transform: uppercase;
+	color: var(--clr-primary);
+	background-color: hsla(0, 0%, 100%);
 }
 
 .skip-to-main-content:focus {
@@ -136,7 +144,7 @@ header .section-container {
 
 .header-logo {
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: var(--fw-bold);
 }
 
 .header-nav ul {
@@ -145,9 +153,9 @@ header .section-container {
 }
 
 .header-nav li {
+	position: relative;
 	margin: 0 0.5rem;
 	font-size: 0.8rem;
-	position: relative;
 }
 
 .header-nav li a::after {
@@ -182,7 +190,7 @@ header .section-container {
 }
 
 .hero-heading {
-	font-size: clamp(2rem, 10vw, 3.6rem);
+	font-size: clamp(2rem, 10vw, 3.8rem);
 	color: var(--clr-primary);
 }
 
@@ -266,7 +274,7 @@ header .section-container {
 }
 
 .about-section .card-content h2 {
-	font-size: clamp(1.2rem, 2vw, 1.8rem);
+	font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 .about-section .card-content p {
@@ -301,8 +309,8 @@ header .section-container {
 
 .models-links ul {
 	display: flex;
-	flex-wrap: wrap;
 	gap: 1em;
+	flex-wrap: wrap;
 }
 
 .models-link a {
@@ -322,7 +330,7 @@ header .section-container {
 .models-subsection {
 	margin-top: 1.5em;
 	min-height: 100vh;
-	scroll-margin-top: 5em;
+	scroll-margin-top: 9em;
 }
 
 .models-subsection h2 {
@@ -531,6 +539,10 @@ footer .section-container {
 
 	.about-section .content.left {
 		flex-direction: row-reverse;
+	}
+
+	.models-subsection {
+		scroll-margin-top: 6em;
 	}
 
 	.models-card img {
