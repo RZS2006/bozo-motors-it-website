@@ -288,9 +288,15 @@ header .section-container {
 	z-index: 100;
 	top: 0;
 	left: 0;
-	padding: 1.5em 100vw;
-	margin: 0 -100vw;
+	padding: 1.5em 50%;
+	margin: 0 -50%;
 	background-color: white;
+	transition: box-shadow var(--transition-speed);
+}
+
+.models-links.stuck {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px,
+		rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
 }
 
 .models-links ul {

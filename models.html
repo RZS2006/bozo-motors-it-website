@@ -353,6 +353,18 @@
             document.activeElement.scrollIntoView({ behavior: "smooth", block: "center" });
         }
     })
+
+    const navigation = document.querySelector(".models-links");
+
+    window.addEventListener('scroll', () => {
+        const { y, top } = navigation.getBoundingClientRect();
+
+        if (y === 0 && top === 0) {
+            navigation.classList.add("stuck");
+        } else {
+            navigation.classList.remove("stuck");
+        }
+    })
 </script>
 
 </html>
