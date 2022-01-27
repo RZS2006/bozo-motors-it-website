@@ -468,7 +468,8 @@ textarea.contact-input {
 	transition: padding var(--transition-speed);
 }
 
-.contact-submit-button:hover {
+.contact-submit-button:hover,
+.contact-submit-button:focus {
 	padding: 1em 2.5em;
 }
 
