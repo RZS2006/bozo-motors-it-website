@@ -34,13 +34,13 @@
     <header>
         <a href="#main" class="skip-to-main-content">Skip to Main Content</a>
         <div class="container">
-            <div class="section-container">
-                <a class="header-logo" href="./index.html">Bozo Motors</a>
-                <nav class="header-nav">
+            <div class="header__container">
+                <a class="header__logo" href="./index.html">Bozo Motors</a>
+                <nav class="header__nav" aria-label="primary navigation">
                     <ul>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./models.html">Models</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li class="header__nav-item"><a href="./about.html">About</a></li>
+                        <li class="header__nav-item"><a href="./models.html">Models</a></li>
+                        <li class="header__nav-item"><a href="./contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="section-container">
                     <h1 class="section-heading">Our Models</h1>
-                    <nav class="models-links">
+                    <nav class="models-links" id="models-links" aria-label="model types navigation">
                         <ul>
                             <li class="models-link"><a href="#electric">Electric</a></li>
                             <li class="models-link"><a href="#hybrid">Hybrid</a></li>
@@ -334,8 +334,8 @@
 
     <footer>
         <div class="container">
-            <div class="section-container">
-                <span class="footer-copyright">© 2022 Bozo Motors, Inc.</span>
+            <div class="footer__container">
+                <span class="footer__copyright">© 2022 Bozo Motors, Inc.</span>
             </div>
         </div>
     </footer>
@@ -353,7 +353,7 @@
         }
     })
 
-    const navigation = document.querySelector(".models-links");
+    const navigation = document.querySelector("#models-links");
 
     window.addEventListener('scroll', () => {
         const { y, top } = navigation.getBoundingClientRect();
