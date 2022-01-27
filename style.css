@@ -176,8 +176,8 @@ header {
 /* Home  */
 
 .hero-section {
-	background: center/cover url(./img/pexels-scosche-1149056.webp);
-	background-color: #df9331;
+	background: center/cover url(./img/home-hero.webp);
+	background-color: hsl(34, 65%, 54%);
 	height: calc(100vh - 64px);
 }
 
