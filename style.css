@@ -283,100 +283,100 @@ header {
 
 /* Models Page */
 
-.models-section {
+.models {
 	overflow-x: clip;
 }
 
-.models-links {
+.models__nav {
 	position: sticky;
 	z-index: 100;
 	top: 0;
 	left: 0;
-	padding: 1.5em 50%;
+	padding: 1em 50%;
 	margin: 0 -50%;
 	background-color: white;
 	transition: box-shadow var(--transition-speed);
 }
 
-.models-links.stuck {
+.models__nav.stuck {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px,
 		rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
 }
 
-.models-links ul {
+.models__nav ul {
 	display: flex;
 	gap: 1em;
 	flex-wrap: wrap;
 }
 
-.models-link a {
+.models__nav-item a {
 	display: inline-block;
 	padding: 0.5em 1em;
 	background-color: var(--clr-gray);
-	border-radius: 5em;
+	border-radius: 10em;
 	font-size: 0.8rem;
 	color: var(--clr-text-gray);
+	transition: background-color var(--transition-speed);
 }
 
-.models-link a:hover {
+.models__nav-item a:hover {
 	background-color: var(--clr-hover-gray);
-	transition: var(--transition-speed);
 }
 
-.models-subsection {
-	margin-top: 1.5em;
+.models__section {
+	margin-top: 2em;
 	min-height: 100vh;
-	scroll-margin-top: 9em;
+	scroll-margin-top: 8rem;
 }
 
-.models-subsection h2 {
-	font-size: clamp(1.2rem, 3vw, 1.8rem);
+.models__section h2 {
+	font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
-.models-grid {
+.models__section-container {
 	margin-top: 2em;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 	gap: 2em;
 }
 
-.models-card {
+.models__card {
 	align-self: start;
 	border-radius: 5px;
 	transition: background-color var(--transition-speed);
 }
 
-.models-card:hover {
+.models__card:hover {
 	background-color: var(--clr-background-gray);
 }
 
-.models-card:focus-within {
+.models__card:focus-within {
 	background-color: var(--clr-background-gray);
 }
 
-.models-card img {
-	max-height: 180px;
+.models__card img {
+	max-height: 160px;
 	aspect-ratio: 5 / 3;
 	object-fit: cover;
 }
 
-.models-card .card-content {
+.models__card .models__card-content {
 	position: relative;
-	padding: 1.5em 1em;
 	overflow: hidden;
+	padding: 1.5em 1em;
 }
 
-.car-name {
+.models__card-name {
 	font-size: clamp(1rem, 3vw, 1.4rem);
 }
 
-.car-price {
+.models__card-price {
 	margin-top: 0.5em;
 	font-size: 0.8rem;
 	color: var(--clr-text-gray);
 }
 
-.car-link {
+.models__card-link {
 	display: inline-flex;
 	align-items: center;
 	margin-top: 1.5em;
@@ -384,16 +384,16 @@ header {
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
 	color: var(--clr-primary);
-	transition: letter-spacing var(--transition-speed);
+	transition: var(--transition-speed);
 }
 
-.car-link img {
+.models__card-link img {
 	display: inline-block;
-	width: 1em;
+	width: 1rem;
 }
 
-.car-link:hover,
-.car-link:focus {
+.models__card-link:hover,
+.models__card-link:focus {
 	text-decoration: underline;
 	letter-spacing: 0.3em;
 	color: var(--clr-hover-primary);
@@ -480,7 +480,7 @@ footer {
 		max-width: 1024px;
 	}
 
-	.section-heading:after {
+	.section-heading::after {
 		height: 6px;
 	}
 
@@ -533,26 +533,32 @@ footer {
 
 	/* Models */
 
-	.models-subsection {
+	.models__nav {
+		padding: 1.5em 50%;
+	}
+
+	.models__section {
 		scroll-margin-top: 6em;
 	}
 
-	.models-card img {
-		max-height: 300px;
+	.models__card img {
+		max-height: 280px;
 		transition: var(--transition-speed);
+		filter: grayscale(0.4);
 	}
 
-	.models-card:hover img {
+	.models__card:hover img {
+		aspect-ratio: 4 / 3;
+		scale: 1.05;
+		filter: grayscale(0);
+	}
+
+	.models__card:focus-within img {
 		aspect-ratio: 4 / 3;
 		scale: 1.05;
 	}
 
-	.models-card:focus-within img {
-		aspect-ratio: 4 / 3;
-		scale: 1.05;
-	}
-
-	.models-card .car-link {
+	.models__card .models__card-link {
 		position: absolute;
 		left: 0;
 		bottom: 0;
@@ -561,8 +567,8 @@ footer {
 		transition: var(--transition-speed);
 	}
 
-	.models-card:hover .car-link,
-	.models-card .car-link:focus {
+	.models__card:hover .models__card-link,
+	.models__card .models__card-link:focus {
 		position: relative;
 		transform: translateX(0px);
 		opacity: 1;
@@ -578,7 +584,7 @@ footer {
 @media screen and (max-width: 720px) {
 	/* Models */
 
-	.models-card[data-aos-delay] {
+	.models__card[data-aos-delay] {
 		transition-delay: 0ms !important;
 	}
 }
